@@ -3,3 +3,4 @@ data/
 tests/
 yarn.lock
 package-lock.json
+.env.local

@@ -1,12 +1,16 @@
+require('dotenv').config(); // Load environment variables from .env file
 const mysql = require('mysql2/promise');
 
-// MySQL Database configuration
 const dbConfig = {
-  host: 'localhost',
-  port: 3306,        // MySQL server port - this is the port where MySQL is listening
-  user: 'root',
-  password: 'root',
-  database: 'compliance'
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'compliance_db',
+  port: process.env.DB_PORT || 3306,
+  // Add other MySQL configuration options as needed
+  acquireTimeout: 60000,
+  timeout: 60000,
+  reconnect: true
 };
 
 // Create database connection pool
