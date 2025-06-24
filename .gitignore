@@ -63,4 +63,4 @@ yarn.lock
 package-lock.json
 
 # Tests (if you want to exclude them from version control)
-# tests/
+tests/
